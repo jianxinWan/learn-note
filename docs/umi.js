@@ -6711,10 +6711,10 @@
     var r = n('YS25'),
       o = { basename: 'base' };
     window.routerBase && (o.basename = window.routerBase);
-    var i = Object({ NODE_ENV: 'production' }).__IS_SERVER ? null : Object(r['a'])(o),
+    var i = Object({ NODE_ENV: 'production' }).__IS_SERVER ? null : Object(r['b'])(o),
       a = function () {
         var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-        return e || (i = Object(r['a'])(o)), i;
+        return e || (i = Object(r['b'])(o)), i;
       };
   },
   'G+Rx': function (e, t, n) {
@@ -32417,77 +32417,6 @@
       return e;
     };
   },
-  gql7: function (e, t, n) {
-    'use strict';
-    n.r(t);
-    var r = n('q1tI'),
-      o = n.n(r),
-      i = n('dEAq'),
-      a = n('H1Ra'),
-      u = o.a.memo((e) => {
-        e.demos;
-        return o.a.createElement(
-          o.a.Fragment,
-          null,
-          o.a.createElement(
-            'div',
-            { className: 'markdown' },
-            o.a.createElement(
-              'h1',
-              { id: 'leetcode' },
-              o.a.createElement(
-                i['AnchorLink'],
-                { to: '#leetcode', 'aria-hidden': 'true', tabIndex: -1 },
-                o.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              'leetcode',
-            ),
-            o.a.createElement(
-              'h2',
-              { id: 'getting-started' },
-              o.a.createElement(
-                i['AnchorLink'],
-                { to: '#getting-started', 'aria-hidden': 'true', tabIndex: -1 },
-                o.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              'Getting Started',
-            ),
-            o.a.createElement('p', null, 'Install dependencies,'),
-            o.a.createElement(a['a'], { code: '$ npm i', lang: 'bash' }),
-            o.a.createElement('p', null, 'Start the dev server,'),
-            o.a.createElement(a['a'], { code: '$ npm start', lang: 'bash' }),
-            o.a.createElement('p', null, 'Build documentation,'),
-            o.a.createElement(a['a'], { code: '$ npm run docs:build', lang: 'bash' }),
-            o.a.createElement('p', null, 'Run test,'),
-            o.a.createElement(a['a'], { code: '$ npm test', lang: 'bash' }),
-            o.a.createElement(
-              'p',
-              null,
-              'Build library via ',
-              o.a.createElement('code', null, 'father-build'),
-              ',',
-            ),
-            o.a.createElement(a['a'], { code: '$ npm run build', lang: 'bash' }),
-          ),
-        );
-      });
-    t['default'] = (e) => {
-      var t = o.a.useContext(i['context']),
-        n = t.demos;
-      return (
-        o.a.useEffect(() => {
-          var t;
-          null !== e &&
-            void 0 !== e &&
-            null !== (t = e.location) &&
-            void 0 !== t &&
-            t.hash &&
-            i['AnchorLink'].scrollToAnchor(decodeURIComponent(e.location.hash.slice(1)));
-        }, []),
-        o.a.createElement(u, { demos: n })
-      );
-    };
-  },
   gvgV: function (e, t, n) {
     'use strict';
     var r = n('67WC'),
@@ -34854,7 +34783,7 @@
   },
   q3YX: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"*":[{"path":"/","title":"leetcode","meta":{"order":null}},{"title":"LeetCode","path":"/leet-code","meta":{},"children":[{"path":"/leet-code/\u7b97\u6cd5\u5165\u95e8","title":"\u7b97\u6cd5\u5165\u95e8","meta":{"order":1}},{"path":"/leet-code/\u6570\u636e\u7ed3\u6784\u57fa\u7840","title":"\u6570\u636e\u7ed3\u6784\u57fa\u7840","meta":{"order":2}},{"path":"/leet-code/\u6bcf\u65e5\u4e00\u9898","title":"\u6bcf\u65e5\u4e00\u9898","meta":{"order":3}}]},{"title":"Webgl","path":"/webgl","meta":{},"children":[{"path":"/webgl","title":"webgl\u57fa\u7840","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{},"title":"origin","logo":"https://p0.meituan.net/travelcube/a70da08acbbeea6ce5f85ad7c8530411322973.png","mode":"doc","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"*":[{"title":"LeetCode","path":"/leet-code","meta":{},"children":[{"path":"/leet-code/\u7b97\u6cd5\u5165\u95e8","title":"\u7b97\u6cd5\u5165\u95e8","meta":{"order":1}},{"path":"/leet-code/\u6570\u636e\u7ed3\u6784\u57fa\u7840","title":"\u6570\u636e\u7ed3\u6784\u57fa\u7840","meta":{"order":2}},{"path":"/leet-code/\u6bcf\u65e5\u4e00\u9898","title":"\u6bcf\u65e5\u4e00\u9898","meta":{"order":3}}]},{"title":"Webgl","path":"/webgl","meta":{},"children":[{"path":"/webgl","title":"webgl\u57fa\u7840","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{},"title":"origin","logo":"https://p0.meituan.net/travelcube/a70da08acbbeea6ce5f85ad7c8530411322973.png","mode":"doc","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   qHiR: function (e, t, n) {},
@@ -37468,23 +37397,6 @@
           path: '/',
           wrappers: [n('afA6').default, n('0Bia').default],
           routes: [
-            {
-              path: '/',
-              component: n('gql7').default,
-              exact: !0,
-              meta: {
-                locale: 'en-US',
-                order: null,
-                filePath: 'README.md',
-                updatedTime: 1675935644e3,
-                slugs: [
-                  { depth: 1, value: 'leetcode', heading: 'leetcode' },
-                  { depth: 2, value: 'Getting Started', heading: 'getting-started' },
-                ],
-                title: 'leetcode',
-              },
-              title: 'leetcode',
-            },
             {
               path: '/leet-code/\u6570\u636e\u7ed3\u6784\u57fa\u7840',
               component: n('bKve').default,
