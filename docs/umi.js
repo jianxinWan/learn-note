@@ -6709,7 +6709,7 @@
         return i;
       });
     var r = n('YS25'),
-      o = { basename: 'base' };
+      o = { basename: 'learn-note' };
     window.routerBase && (o.basename = window.routerBase);
     var i = Object({ NODE_ENV: 'production' }).__IS_SERVER ? null : Object(r['b'])(o),
       a = function () {
