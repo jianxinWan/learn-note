@@ -49,7 +49,7 @@
     (n.o = function (e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (n.p = '/'),
+    (n.p = 'learn-note/'),
     n((n.s = 0));
 })({
   '++zV': function (e, t, n) {
@@ -37613,7 +37613,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/LeetCode/\u6570\u636e\u7ed3\u6784\u57fa\u7840.md',
-                updatedTime: 1675935644e3,
+                updatedTime: 1676030599e3,
                 title: '\u6570\u636e\u7ed3\u6784\u57fa\u7840',
                 order: 2,
                 slugs: [
@@ -37717,7 +37717,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/LeetCode/\u6bcf\u65e5\u4e00\u9898.md',
-                updatedTime: 1675935644e3,
+                updatedTime: 1676030599e3,
                 title: '\u6bcf\u65e5\u4e00\u9898',
                 order: 3,
                 slugs: [
@@ -37743,7 +37743,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/LeetCode/\u7b97\u6cd5\u5165\u95e8.md',
-                updatedTime: 1675944807e3,
+                updatedTime: 1676030599e3,
                 title: '\u7b97\u6cd5\u5165\u95e8',
                 order: 1,
                 slugs: [
