@@ -460,28 +460,23 @@
     var r = n('q1tI'),
       o = n.n(r),
       i = () => {
-        function e(e, t) {
-          var n = 0,
-            r = e.length - 1;
-          while (n < r) {
-            var o = Math.floor(n + r) / 2;
-            e[o];
+        function e(e) {
+          for (var t = [e[0]], n = 1; n < e.length; n++) {
+            var r = t[t.length - 1];
+            r &&
+            (('(' === r && ')' === e[n]) ||
+              ('[' === r && ']' === e[n]) ||
+              ('{' === r && '}' === e[n]))
+              ? t.pop()
+              : t.push(e[n]);
           }
-          for (var i = 0; i < e.length; i++) {
-            var a = e.indexOf(t - e[i]);
-            if (-1 !== a && a !== i) return [i + 1, a + 1].sort((e, t) => e - t);
-          }
-          return [1, 2];
+          return 0 == t.length;
         }
         return o.a.createElement(
           o.a.Fragment,
           null,
-          o.a.createElement(
-            'p',
-            null,
-            '\u8f93\u5165\uff1anumbers = [2,3,4], target = 6 \u8f93\u51fa\uff1a[1,2] \u89e3\u91ca\uff1a2 \u4e0e 7 \u4e4b\u548c\u7b49\u4e8e\u76ee\u6807\u6570 9 \u3002\u56e0\u6b64 index1 = 1, index2 = 2 \u3002\u8fd4\u56de [1, 2] \u3002',
-          ),
-          o.a.createElement('p', null, '\u8f93\u51fa', JSON.stringify(e([1, 0, 3, 2, 2], 4))),
+          o.a.createElement('p', null, '\u8f93\u5165\uff1as = `` \u8f93\u51fa\uff1atrue'),
+          o.a.createElement('p', null, '\u8f93\u51fa', JSON.stringify(e('(){}}{'))),
         );
       };
   },
@@ -1788,42 +1783,80 @@
     var r = n('q1tI'),
       o = n.n(r),
       i = n('dEAq'),
-      a = n('H1Ra'),
-      u = o.a.memo((e) => {
-        e.demos;
+      a = n('Zxc8'),
+      u = n('H1Ra'),
+      c = o.a.memo((e) => {
+        var t = e.demos,
+          n = t['\u6bcf\u65e5\u4e00\u9898-demo'].component;
         return o.a.createElement(
           o.a.Fragment,
           null,
           o.a.createElement(
-            'div',
-            { className: 'markdown' },
+            o.a.Fragment,
+            null,
             o.a.createElement(
-              'h2',
-              { id: '1797-\u8bbe\u8ba1\u4e00\u4e2a\u9a8c\u8bc1\u7cfb\u7edf' },
+              'div',
+              { className: 'markdown' },
               o.a.createElement(
-                i['AnchorLink'],
-                {
-                  to: '#1797-\u8bbe\u8ba1\u4e00\u4e2a\u9a8c\u8bc1\u7cfb\u7edf',
-                  'aria-hidden': 'true',
-                  tabIndex: -1,
-                },
-                o.a.createElement('span', { className: 'icon icon-link' }),
-              ),
-              '1797. \u8bbe\u8ba1\u4e00\u4e2a\u9a8c\u8bc1\u7cfb\u7edf',
-            ),
-            o.a.createElement(
-              'p',
-              null,
-              o.a.createElement(
-                i['Link'],
-                { to: 'https://leetcode.cn/problems/design-authentication-manager/' },
+                'h2',
+                { id: '1797-\u8bbe\u8ba1\u4e00\u4e2a\u9a8c\u8bc1\u7cfb\u7edf' },
+                o.a.createElement(
+                  i['AnchorLink'],
+                  {
+                    to: '#1797-\u8bbe\u8ba1\u4e00\u4e2a\u9a8c\u8bc1\u7cfb\u7edf',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
                 '1797. \u8bbe\u8ba1\u4e00\u4e2a\u9a8c\u8bc1\u7cfb\u7edf',
               ),
+              o.a.createElement(
+                'p',
+                null,
+                o.a.createElement(
+                  i['Link'],
+                  { to: 'https://leetcode.cn/problems/design-authentication-manager/' },
+                  '1797. \u8bbe\u8ba1\u4e00\u4e2a\u9a8c\u8bc1\u7cfb\u7edf',
+                ),
+              ),
+              o.a.createElement(u['a'], {
+                code: 'class AuthenticationManager {\n  private timeToLive = 0;\n  private tokenMap: Record<string, number> = {};\n\n  constructor(timeToLive: number) {\n    this.timeToLive = timeToLive;\n  }\n\n  generate(tokenId: string, currentTime: number): void {\n    this.tokenMap[tokenId] = currentTime;\n  }\n\n  renew(tokenId: string, currentTime: number): void {\n    if (!this.tokenMap[tokenId]) return;\n    if (this.tokenMap[tokenId] + this.timeToLive > currentTime) {\n      this.tokenMap[tokenId] = currentTime;\n    }\n  }\n\n  countUnexpiredTokens(currentTime: number): number {\n    return Object.values(this.tokenMap).filter((item) => item + this.timeToLive > currentTime)\n      .length;\n  }\n}',
+                lang: 'ts',
+              }),
+              o.a.createElement(
+                'h2',
+                { id: '1223-\u63b7\u9ab0\u5b50\u6a21\u62df' },
+                o.a.createElement(
+                  i['AnchorLink'],
+                  {
+                    to: '#1223-\u63b7\u9ab0\u5b50\u6a21\u62df',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '1223. \u63b7\u9ab0\u5b50\u6a21\u62df',
+              ),
+              o.a.createElement(
+                'p',
+                null,
+                o.a.createElement(
+                  i['Link'],
+                  { to: 'https://leetcode.cn/problems/dice-roll-simulation/' },
+                  '1223. \u63b7\u9ab0\u5b50\u6a21\u62df',
+                ),
+              ),
+              o.a.createElement(u['a'], {
+                code: 'let mod = 1e9 + 7;\nfunction dieSimulator(n: number, rollMax: number[]): number {\n  let dp = new Array(n).fill(0).map(() => new Array(6).fill(0));\n  let sum = new Array(n).fill(0);\n  dp[0].fill(1);\n  for (let i = 1; i < n; i++) {\n    sum[i - 1] = dp[i - 1].reduce((pre, cur) => pre + cur, 0) % mod;\n    for (let j = 0; j < 6; j++) {\n      dp[i][j] = sum[i - 1];\n      let k = i - rollMax[j];\n      if (k - 1 >= 0) {\n        dp[i][j] = (dp[i][j] - (sum[k - 1] - dp[k - 1][j]) + mod) % mod;\n      } else if (k >= 0) {\n        dp[i][j] -= 1;\n      }\n    }\n  }\n\n  return dp[n - 1].reduce((pre, cur) => pre + cur, 0) % mod;\n}',
+                lang: 'ts',
+              }),
             ),
-            o.a.createElement(a['a'], {
-              code: 'class AuthenticationManager {\n  private timeToLive = 0;\n  private tokenMap: Record<string, number> = {};\n\n  constructor(timeToLive: number) {\n    this.timeToLive = timeToLive;\n  }\n\n  generate(tokenId: string, currentTime: number): void {\n    this.tokenMap[tokenId] = currentTime;\n  }\n\n  renew(tokenId: string, currentTime: number): void {\n    if (!this.tokenMap[tokenId]) return;\n    if (this.tokenMap[tokenId] + this.timeToLive > currentTime) {\n      this.tokenMap[tokenId] = currentTime;\n    }\n  }\n\n  countUnexpiredTokens(currentTime: number): number {\n    return Object.values(this.tokenMap).filter((item) => item + this.timeToLive > currentTime)\n      .length;\n  }\n}',
-              lang: 'ts',
-            }),
+            o.a.createElement(
+              a['default'],
+              t['\u6bcf\u65e5\u4e00\u9898-demo'].previewerProps,
+              o.a.createElement(n, null),
+            ),
           ),
         );
       });
@@ -1840,7 +1873,7 @@
             t.hash &&
             i['AnchorLink'].scrollToAnchor(decodeURIComponent(e.location.hash.slice(1)));
         }, []),
-        o.a.createElement(u, { demos: n })
+        o.a.createElement(c, { demos: n })
       );
     };
   },
@@ -29008,6 +29041,26 @@
             identifier: '\u6570\u636e\u7ed3\u6784\u57fa\u7840-demo',
           },
         },
+        '\u6bcf\u65e5\u4e00\u9898-demo': {
+          component: function () {
+            var e = n('K+nK')['default'],
+              t = e(n('q1tI')),
+              r = n('/7QA'),
+              o = function () {
+                return t['default'].createElement(r.LearnNote, null);
+              };
+            return t['default'].createElement(o);
+          },
+          previewerProps: {
+            sources: {
+              _: {
+                tsx: "import React from 'react';\nimport { LearnNote } from 'learn-note';\n\nexport default () => <LearnNote />;",
+              },
+            },
+            dependencies: { react: { version: '17.0.2' }, 'learn-note': { version: '1.0.0' } },
+            identifier: '\u6bcf\u65e5\u4e00\u9898-demo',
+          },
+        },
         '\u7b97\u6cd5\u5165\u95e8-demo': {
           component: function () {
             var e = n('K+nK')['default'],
@@ -29689,6 +29742,29 @@
               ),
               o.a.createElement(u['a'], {
                 code: 'function removeElements(head: ListNode | null, val: number): ListNode | null {\n  if (!head) return null;\n  let h = head;\n  while (h.val === val && h.next) {\n    h = h.next;\n  }\n  let l = h;\n  let n = l;\n  while (n) {\n    if (n.val === val) {\n      l.next = n.next;\n    } else {\n      l = n;\n    }\n    n = n.next;\n  }\n  if (h.val === val) return null;\n  return h;\n}',
+                lang: 'ts',
+              }),
+              o.a.createElement(
+                'h2',
+                { id: '20-\u6709\u6548\u7684\u62ec\u53f7' },
+                o.a.createElement(
+                  i['AnchorLink'],
+                  { to: '#20-\u6709\u6548\u7684\u62ec\u53f7', 'aria-hidden': 'true', tabIndex: -1 },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '20. \u6709\u6548\u7684\u62ec\u53f7',
+              ),
+              o.a.createElement(
+                'p',
+                null,
+                o.a.createElement(
+                  i['Link'],
+                  { to: 'https://leetcode.cn/problems/valid-parentheses/' },
+                  '20. \u6709\u6548\u7684\u62ec\u53f7',
+                ),
+              ),
+              o.a.createElement(u['a'], {
+                code: "function isValid(s: string): boolean {\n  let arr = [s[0]];\n  for (let i = 1; i < s.length; i++) {\n    let top = arr[arr.length - 1];\n    if (top) {\n      if (\n        (top === '(' && s[i] === ')') ||\n        (top === '[' && s[i] === ']') ||\n        (top === '{' && s[i] === '}')\n      ) {\n        arr.pop();\n      } else {\n        arr.push(s[i]);\n      }\n    } else {\n      arr.push(s[i]);\n    }\n  }\n  return arr.length == 0;\n}",
                 lang: 'ts',
               }),
             ),
@@ -31005,6 +31081,83 @@
               ),
               o.a.createElement(u['a'], {
                 code: 'function twoSum(numbers: number[], target: number): number[] {\n  for (let i = 0; i < numbers.length; i++) {\n    let index = numbers.indexOf(target - numbers[i]);\n    if (index !== -1 && index !== i) {\n      return [i + 1, index + 1].sort((a, b) => a - b);\n    }\n  }\n  return [1, 2];\n}',
+                lang: 'ts',
+              }),
+              o.a.createElement(
+                'h2',
+                { id: '344-\u53cd\u8f6c\u5b57\u7b26\u4e32' },
+                o.a.createElement(
+                  i['AnchorLink'],
+                  {
+                    to: '#344-\u53cd\u8f6c\u5b57\u7b26\u4e32',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '344. \u53cd\u8f6c\u5b57\u7b26\u4e32',
+              ),
+              o.a.createElement(
+                'p',
+                null,
+                o.a.createElement(
+                  i['Link'],
+                  { to: 'https://leetcode.cn/problems/reverse-string/' },
+                  '344. \u53cd\u8f6c\u5b57\u7b26\u4e32',
+                ),
+              ),
+              o.a.createElement(u['a'], {
+                code: 'function reverseString(s: string[]): void {\n  let len = s.length;\n  for (let i = 0; i < Math.floor(len / 2); i++) {\n    let temp = s[i];\n    s[i] = s[len - 1 - i];\n    s[len - 1 - i] = temp;\n  }\n}',
+                lang: 'ts',
+              }),
+              o.a.createElement(
+                'h2',
+                { id: '557-\u53cd\u8f6c\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd-iii' },
+                o.a.createElement(
+                  i['AnchorLink'],
+                  {
+                    to: '#557-\u53cd\u8f6c\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd-iii',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '557. \u53cd\u8f6c\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd III',
+              ),
+              o.a.createElement(
+                'p',
+                null,
+                o.a.createElement(
+                  i['Link'],
+                  { to: 'https://leetcode.cn/problems/reverse-words-in-a-string-iii/' },
+                  '557. \u53cd\u8f6c\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd III',
+                ),
+              ),
+              o.a.createElement(u['a'], {
+                code: "function reverseArr(s: any[]): any[] {\n  let len = s.length;\n  for (let i = 0; i < Math.floor(len / 2); i++) {\n    let temp = s[i];\n    s[i] = s[len - 1 - i];\n    s[len - 1 - i] = temp;\n  }\n  return s;\n}\n\nfunction reverseWords(s: string): string {\n  return s\n    .split(' ')\n    .map((item) => reverseArr(item.split('')).join(''))\n    .join(' ');\n}",
+                lang: 'ts',
+              }),
+              o.a.createElement(
+                'h2',
+                { id: '733-\u56fe\u50cf\u6e32\u67d3' },
+                o.a.createElement(
+                  i['AnchorLink'],
+                  { to: '#733-\u56fe\u50cf\u6e32\u67d3', 'aria-hidden': 'true', tabIndex: -1 },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '733. \u56fe\u50cf\u6e32\u67d3',
+              ),
+              o.a.createElement(
+                'p',
+                null,
+                o.a.createElement(
+                  i['Link'],
+                  { to: 'https://leetcode.cn/problems/flood-fill/' },
+                  '733. \u56fe\u50cf\u6e32\u67d3',
+                ),
+              ),
+              o.a.createElement(u['a'], {
+                code: 'function floodFill(image: number[][], sr: number, sc: number, color: number): number[][] {\n  function coloring(image: number[][], r: number, c: number, target: number) {\n    if (image?.[r]?.[c] === target && image?.[r]?.[c] !== color) {\n      let t = image[r][c];\n      image[r][c] = color;\n      coloring(image, r - 1, c, t);\n      coloring(image, r + 1, c, t);\n      coloring(image, r, c - 1, t);\n      coloring(image, r, c + 1, t);\n    }\n  }\n  coloring(image, sr, sc, image[sr][sc]);\n  return image;\n}',
                 lang: 'ts',
               }),
             ),
@@ -37547,6 +37700,11 @@
                     value: '203. \u79fb\u9664\u94fe\u8868\u5143\u7d20',
                     heading: '203-\u79fb\u9664\u94fe\u8868\u5143\u7d20',
                   },
+                  {
+                    depth: 2,
+                    value: '20. \u6709\u6548\u7684\u62ec\u53f7',
+                    heading: '20-\u6709\u6548\u7684\u62ec\u53f7',
+                  },
                 ],
                 hasPreviewer: !0,
                 group: { path: '/leet-code', title: 'LeetCode' },
@@ -37568,7 +37726,13 @@
                     value: '1797. \u8bbe\u8ba1\u4e00\u4e2a\u9a8c\u8bc1\u7cfb\u7edf',
                     heading: '1797-\u8bbe\u8ba1\u4e00\u4e2a\u9a8c\u8bc1\u7cfb\u7edf',
                   },
+                  {
+                    depth: 2,
+                    value: '1223. \u63b7\u9ab0\u5b50\u6a21\u62df',
+                    heading: '1223-\u63b7\u9ab0\u5b50\u6a21\u62df',
+                  },
                 ],
+                hasPreviewer: !0,
                 group: { path: '/leet-code', title: 'LeetCode' },
               },
               title: '\u6bcf\u65e5\u4e00\u9898 - origin',
@@ -37579,7 +37743,7 @@
               exact: !0,
               meta: {
                 filePath: 'src/LeetCode/\u7b97\u6cd5\u5165\u95e8.md',
-                updatedTime: 1675935644e3,
+                updatedTime: 1675944807e3,
                 title: '\u7b97\u6cd5\u5165\u95e8',
                 order: 1,
                 slugs: [
@@ -37615,6 +37779,21 @@
                       '167. \u4e24\u6570\u4e4b\u548c II - \u8f93\u5165\u6709\u5e8f\u6570\u7ec4',
                     heading:
                       '167-\u4e24\u6570\u4e4b\u548c-ii---\u8f93\u5165\u6709\u5e8f\u6570\u7ec4',
+                  },
+                  {
+                    depth: 2,
+                    value: '344. \u53cd\u8f6c\u5b57\u7b26\u4e32',
+                    heading: '344-\u53cd\u8f6c\u5b57\u7b26\u4e32',
+                  },
+                  {
+                    depth: 2,
+                    value: '557. \u53cd\u8f6c\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd III',
+                    heading: '557-\u53cd\u8f6c\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd-iii',
+                  },
+                  {
+                    depth: 2,
+                    value: '733. \u56fe\u50cf\u6e32\u67d3',
+                    heading: '733-\u56fe\u50cf\u6e32\u67d3',
                   },
                 ],
                 hasPreviewer: !0,
