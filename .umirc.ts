@@ -9,5 +9,5 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
-  publicPath: './',
+  publicPath: '//jianxinwan.github.io/learn-note/',
 });
