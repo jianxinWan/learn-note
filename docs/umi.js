@@ -455,28 +455,29 @@
     'use strict';
     n.r(t),
       n.d(t, 'LearnNote', function () {
-        return i;
+        return a;
       });
-    var r = n('q1tI'),
-      o = n.n(r),
-      i = () => {
+    var r = n('tJVT'),
+      o = n('q1tI'),
+      i = n.n(o),
+      a = () => {
         function e(e) {
-          for (var t = [e[0]], n = 1; n < e.length; n++) {
-            var r = t[t.length - 1];
-            r &&
-            (('(' === r && ')' === e[n]) ||
-              ('[' === r && ']' === e[n]) ||
-              ('{' === r && '}' === e[n]))
-              ? t.pop()
-              : t.push(e[n]);
-          }
-          return 0 == t.length;
+          var t = e.sort((e, t) => e - t),
+            n = Object(r['a'])(t, 3),
+            o = n[0],
+            i = n[1],
+            a = n[2];
+          return o + i <= a ? a : a + Math.ceil(o + i - a) / 2;
         }
-        return o.a.createElement(
-          o.a.Fragment,
+        return i.a.createElement(
+          i.a.Fragment,
           null,
-          o.a.createElement('p', null, '\u8f93\u5165\uff1as = `` \u8f93\u51fa\uff1atrue'),
-          o.a.createElement('p', null, '\u8f93\u51fa', JSON.stringify(e('(){}}{'))),
+          i.a.createElement(
+            'p',
+            null,
+            '\u8f93\u5165\uff1aamount = [1,4,2] \u8f93\u51fa\uff1a4 \u89e3\u91ca\uff1a\u4e0b\u9762\u7ed9\u51fa\u4e00\u79cd\u65b9\u6848\uff1a \u7b2c 1 \u79d2\uff1a\u88c5\u6ee1\u4e00\u676f\u51b7\u6c34\u548c\u4e00\u676f\u6e29\u6c34\u3002 \u7b2c 2 \u79d2\uff1a\u88c5\u6ee1\u4e00\u676f\u6e29\u6c34\u548c\u4e00\u676f\u70ed\u6c34\u3002 \u7b2c 3 \u79d2\uff1a\u88c5\u6ee1\u4e00\u676f\u6e29\u6c34\u548c\u4e00\u676f\u70ed\u6c34\u3002 \u7b2c 4 \u79d2\uff1a\u88c5\u6ee1\u4e00\u676f\u6e29\u6c34\u3002 \u53ef\u4ee5\u8bc1\u660e\u6700\u5c11\u9700\u8981 4 \u79d2\u624d\u80fd\u88c5\u6ee1\u6240\u6709\u676f\u5b50\u3002',
+          ),
+          i.a.createElement('p', null, '\u8f93\u51fa', JSON.stringify(e([1, 4, 2]))),
         );
       };
   },
@@ -1849,6 +1850,35 @@
               ),
               o.a.createElement(u['a'], {
                 code: 'let mod = 1e9 + 7;\nfunction dieSimulator(n: number, rollMax: number[]): number {\n  let dp = new Array(n).fill(0).map(() => new Array(6).fill(0));\n  let sum = new Array(n).fill(0);\n  dp[0].fill(1);\n  for (let i = 1; i < n; i++) {\n    sum[i - 1] = dp[i - 1].reduce((pre, cur) => pre + cur, 0) % mod;\n    for (let j = 0; j < 6; j++) {\n      dp[i][j] = sum[i - 1];\n      let k = i - rollMax[j];\n      if (k - 1 >= 0) {\n        dp[i][j] = (dp[i][j] - (sum[k - 1] - dp[k - 1][j]) + mod) % mod;\n      } else if (k >= 0) {\n        dp[i][j] -= 1;\n      }\n    }\n  }\n\n  return dp[n - 1].reduce((pre, cur) => pre + cur, 0) % mod;\n}',
+                lang: 'ts',
+              }),
+              o.a.createElement(
+                'h2',
+                {
+                  id: '2335-\u88c5\u6ee1\u676f\u5b50\u9700\u8981\u7684\u6700\u77ed\u603b\u65f6\u957f',
+                },
+                o.a.createElement(
+                  i['AnchorLink'],
+                  {
+                    to: '#2335-\u88c5\u6ee1\u676f\u5b50\u9700\u8981\u7684\u6700\u77ed\u603b\u65f6\u957f',
+                    'aria-hidden': 'true',
+                    tabIndex: -1,
+                  },
+                  o.a.createElement('span', { className: 'icon icon-link' }),
+                ),
+                '2335. \u88c5\u6ee1\u676f\u5b50\u9700\u8981\u7684\u6700\u77ed\u603b\u65f6\u957f',
+              ),
+              o.a.createElement(
+                'p',
+                null,
+                o.a.createElement(
+                  i['Link'],
+                  { to: 'https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups/' },
+                  '2335. \u88c5\u6ee1\u676f\u5b50\u9700\u8981\u7684\u6700\u77ed\u603b\u65f6\u957f',
+                ),
+              ),
+              o.a.createElement(u['a'], {
+                code: 'function fillCups(amount: number[]): number {\n  const [min, mid, max] = amount.sort((a, b) => a - b);\n  if (min + mid <= max) return max;\n\n  return max + Math.ceil(min + mid - max) / 2;\n}',
                 lang: 'ts',
               }),
             ),
@@ -37508,62 +37538,9 @@
     var r = n('bCY9'),
       o = n('FfOG'),
       i = n('rlch'),
-      a = n('zlVK');
-    function u(e) {
-      if (Array.isArray(e)) return e;
-    }
-    function c(e, t) {
-      var n =
-        null == e ? null : ('undefined' !== typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
-      if (null != n) {
-        var r,
-          o,
-          i = [],
-          a = !0,
-          u = !1;
-        try {
-          for (n = n.call(e); !(a = (r = n.next()).done); a = !0)
-            if ((i.push(r.value), t && i.length === t)) break;
-        } catch (c) {
-          (u = !0), (o = c);
-        } finally {
-          try {
-            a || null == n['return'] || n['return']();
-          } finally {
-            if (u) throw o;
-          }
-        }
-        return i;
-      }
-    }
-    function l(e, t) {
-      (null == t || t > e.length) && (t = e.length);
-      for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
-      return r;
-    }
-    function s(e, t) {
-      if (e) {
-        if ('string' === typeof e) return l(e, t);
-        var n = Object.prototype.toString.call(e).slice(8, -1);
-        return (
-          'Object' === n && e.constructor && (n = e.constructor.name),
-          'Map' === n || 'Set' === n
-            ? Array.from(e)
-            : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-            ? l(e, t)
-            : void 0
-        );
-      }
-    }
-    function f() {
-      throw new TypeError(
-        'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
-      );
-    }
-    function p(e, t) {
-      return u(e) || c(e, t) || s(e, t) || f();
-    }
-    function d() {
+      a = n('zlVK'),
+      u = n('tJVT');
+    function c() {
       var e = [
         {
           path: '/~demos/:uuid',
@@ -37575,20 +37552,20 @@
               o = r.default,
               i = n('Zxc8'),
               a = i.default,
-              u = n('dEAq'),
-              c = u.usePrefersColor,
-              l = u.context,
-              s = t.useContext(l),
-              f = s.demos,
+              c = n('dEAq'),
+              l = c.usePrefersColor,
+              s = c.context,
+              f = t.useContext(s),
+              p = f.demos,
               d = t.useState([]),
-              h = p(d, 2),
+              h = Object(u['a'])(d, 2),
               v = h[0],
               m = h[1];
             switch (
               (t.useLayoutEffect(() => {
-                m(o(e, f));
+                m(o(e, p));
               }, [e.match.params.uuid, e.location.query.wrapper, e.location.query.capture]),
-              c(),
+              l(),
               v.length)
             ) {
               case 1:
@@ -37731,6 +37708,13 @@
                     value: '1223. \u63b7\u9ab0\u5b50\u6a21\u62df',
                     heading: '1223-\u63b7\u9ab0\u5b50\u6a21\u62df',
                   },
+                  {
+                    depth: 2,
+                    value:
+                      '2335. \u88c5\u6ee1\u676f\u5b50\u9700\u8981\u7684\u6700\u77ed\u603b\u65f6\u957f',
+                    heading:
+                      '2335-\u88c5\u6ee1\u676f\u5b50\u9700\u8981\u7684\u6700\u77ed\u603b\u65f6\u957f',
+                  },
                 ],
                 hasPreviewer: !0,
                 group: { path: '/leet-code', title: 'LeetCode' },
@@ -37829,7 +37813,7 @@
         r['a'].applyPlugins({ key: 'patchRoutes', type: i['a'].event, args: { routes: e } }), e
       );
     }
-    var h = function () {
+    var l = function () {
         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
         return r['a'].applyPlugins({
           key: 'render',
@@ -37839,7 +37823,7 @@
               key: 'modifyClientRenderOpts',
               type: i['a'].modify,
               initialValue: {
-                routes: e.routes || d(),
+                routes: e.routes || c(),
                 plugin: r['a'],
                 history: Object(o['a'])(e.hot),
                 isServer: Object({ NODE_ENV: 'production' }).__IS_SERVER,
@@ -37852,9 +37836,69 @@
           args: e,
         });
       },
-      v = h();
-    t['default'] = v();
+      s = l();
+    t['default'] = s();
     window.g_umi = { version: '3.5.36' };
+  },
+  tJVT: function (e, t, n) {
+    'use strict';
+    function r(e) {
+      if (Array.isArray(e)) return e;
+    }
+    function o(e, t) {
+      var n =
+        null == e ? null : ('undefined' !== typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
+      if (null != n) {
+        var r,
+          o,
+          i = [],
+          a = !0,
+          u = !1;
+        try {
+          for (n = n.call(e); !(a = (r = n.next()).done); a = !0)
+            if ((i.push(r.value), t && i.length === t)) break;
+        } catch (c) {
+          (u = !0), (o = c);
+        } finally {
+          try {
+            a || null == n['return'] || n['return']();
+          } finally {
+            if (u) throw o;
+          }
+        }
+        return i;
+      }
+    }
+    function i(e, t) {
+      (null == t || t > e.length) && (t = e.length);
+      for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
+      return r;
+    }
+    function a(e, t) {
+      if (e) {
+        if ('string' === typeof e) return i(e, t);
+        var n = Object.prototype.toString.call(e).slice(8, -1);
+        return (
+          'Object' === n && e.constructor && (n = e.constructor.name),
+          'Map' === n || 'Set' === n
+            ? Array.from(e)
+            : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
+            ? i(e, t)
+            : void 0
+        );
+      }
+    }
+    function u() {
+      throw new TypeError(
+        'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
+      );
+    }
+    function c(e, t) {
+      return r(e) || o(e, t) || a(e, t) || u();
+    }
+    n.d(t, 'a', function () {
+      return c;
+    });
   },
   tMB7: function (e, t, n) {
     var r = n('y1pI');
