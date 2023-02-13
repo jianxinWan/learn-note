@@ -1,22 +1,51 @@
 import React from 'react';
 
 export default () => {
-  function fillCups(amount: number[]): number {
-    const [min, mid, max] = amount.sort((a, b) => a - b);
-    if (min + mid <= max) return max;
+  function balancedString(s: string): number {
+    const n = s.length;
+    const avg = Math.floor(s.length / 4);
+    const charMap: Record<string, number> = { Q: 0, W: 0, E: 0, R: 0 };
+    for (let i of s) {
+      charMap[i]++;
+    }
+    if (
+      charMap['Q'] === avg &&
+      charMap['W'] === avg &&
+      charMap['E'] === avg &&
+      charMap['R'] === avg
+    ) {
+      return 0;
+    }
 
-    return max + Math.ceil(min + mid - max) / 2;
+    let minLen = n;
+    let fast = 0;
+    let slow = 0;
+    while (fast < n) {
+      let curChar = s[fast];
+      charMap[curChar]--;
+      while (
+        slow <= fast &&
+        charMap['Q'] <= avg &&
+        charMap['W'] <= avg &&
+        charMap['E'] <= avg &&
+        charMap['R'] <= avg
+      ) {
+        minLen = Math.min(minLen, fast - slow + 1);
+        let slowChar = s[slow];
+        charMap[slowChar]++;
+        slow++;
+      }
+      fast++;
+    }
+
+    return minLen;
   }
   return (
     <>
-      <p>
-        输入：amount = [1,4,2] 输出：4 解释：下面给出一种方案： 第 1 秒：装满一杯冷水和一杯温水。 第
-        2 秒：装满一杯温水和一杯热水。 第 3 秒：装满一杯温水和一杯热水。 第 4 秒：装满一杯温水。
-        可以证明最少需要 4 秒才能装满所有杯子。
-      </p>
+      <p>输入：s = "QWER" 输出：0 解释：s 已经是平衡的了。</p>
       <p>
         输出
-        {JSON.stringify(fillCups([1, 4, 2]))}
+        {JSON.stringify(balancedString('WQWRQQQW'))}
       </p>
     </>
   );
